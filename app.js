@@ -9,11 +9,11 @@ const app = Vue.createApp({
 
   methods : {
     // Whenever a function is listening to an event it does not need to return a value
-    add() {
-      this.counter++;
+    add(num) {
+      this.counter+=num;
     },
-    reduce() {
-      this.counter--;
+    reduce(num) {
+      this.counter-=num;
     }
   }
 });
