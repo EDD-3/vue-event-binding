@@ -25,12 +25,15 @@
       <!-- Evaluated once -->
       <p v-once>Starting Counter: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
-      <input
+
+      <!-- One way binding -->
+      <!-- <input
         type="text"
         v-bind:value="name"
         v-on:input="setName"
         v-on:keyup.enter="confirmInput"
-      />
+      /> -->
+      <input type="text" v-model="name">
       <p>Your Name: {{ confirmedName }}</p>
 
       <form v-on:submit.prevent="submitForm">
