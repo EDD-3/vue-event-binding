@@ -9,10 +9,15 @@ const app = Vue.createApp({
   },
 
   methods : {
+    submitForm(event) {
+      // Prevents the form from being submitted.
+      event.preventDefault();
+      alert('Submitted!');
+    },
     // Whenever a function is listening to an event it does not need to return a value
-    setName(event) {
+    setName(event, lastName) {
 
-      this.name = event.target.value ;
+      this.name = event.target.value+ ' '+ lastName ;
     },
     add(num) {
       this.counter+=num;
