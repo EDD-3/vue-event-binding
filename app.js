@@ -19,15 +19,19 @@ const app = Vue.createApp({
       alert('Submitted!');
     },
     // Whenever a function is listening to an event it does not need to return a value
-    setName(event, lastName) {
+    setName(event) {
 
-      this.name = event.target.value+ ' '+ lastName ;
+      this.name = event.target.value;
     },
     add(num) {
       this.counter+=num;
     },
     reduce(num) {
       this.counter-=num;
+    },
+
+    resetInput() {
+      this.name =  '';
     }
   }
 });
