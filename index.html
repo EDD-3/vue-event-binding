@@ -25,7 +25,6 @@
       <!-- Evaluated once -->
       <p v-once>Starting Counter: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
-
       <!-- One way binding -->
       <!-- <input
         type="text"
@@ -34,12 +33,12 @@
         v-on:keyup.enter="confirmInput"
       /> -->
       <input type="text" v-model="name">
-      <p>Your Name: {{ confirmedName }}</p>
+      <p>Your Name: {{ fullname }}</p>
 
-      <form v-on:submit.prevent="submitForm">
+      <!-- <form v-on:submit.prevent="submitForm">
         <input type="text" />
         <button>Sign up</button>
-      </form>
+      </form> -->
       <hr />
       <button v-on:click="resetInput">Reset Input</button>
     </section>

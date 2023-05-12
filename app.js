@@ -8,6 +8,12 @@ const app = Vue.createApp({
       confirmedName:''
     };
   },
+  computed: {
+    //Computed properties are name like data properties
+    fullname () {
+      return this.name !== ''  ? this.name + ' ' + 'R' : '';
+    }
+  },
 
   methods : {
     confirmInput() {
@@ -18,9 +24,11 @@ const app = Vue.createApp({
       event.preventDefault();
       alert('Submitted!');
     },
+    outputFullname () {
+      return this.name !== ''  ? this.name + ' ' + 'R' : '';
+    },
     // Whenever a function is listening to an event it does not need to return a value
     setName(event) {
-
       this.name = event.target.value;
     },
     add(num) {
