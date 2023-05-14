@@ -7,10 +7,19 @@ const app = Vue.createApp({
       name: "",
       confirmedName: "",
       lastName: "",
-      fullname: "",
+      // fullname: "",
     };
   },
   watch: {
+    //Using watchers for conditionals, timeouts and keeping attentiong at some detail
+    counter(value) {
+      if (value > 50) {
+        const that = this;
+        setTimeout(function () {
+          that.counter = 0;
+        }, 2000);
+      }
+    },
     // name(value) {
     //   if (value === "") {
     //     this.fullname = "";
@@ -27,10 +36,12 @@ const app = Vue.createApp({
     // },
   },
   computed: {
-    //Computed properties are name like data properties
-    // fullname () {
-    //   return this.name !== ''  ? this.name + ' ' + 'R' : '';
-    // }
+    // Computed properties are name like data properties
+    fullname() {
+      return this.name === "" || this.lastName === ""
+        ? ""
+        : this.name + " " + this.lastName;
+    },
   },
 
   methods: {
@@ -43,7 +54,7 @@ const app = Vue.createApp({
       alert("Submitted!");
     },
     outputFullname() {
-      return this.name !== "" ? this.name + " " + "R" : "";
+      return this.name === "" ?  "" :this.name + " " + "R";
     },
     // Whenever a function is listening to an event it does not need to return a value
     setName(event) {
