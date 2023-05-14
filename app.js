@@ -4,44 +4,62 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 10,
-      name:'',
-      confirmedName:''
+      name: "",
+      confirmedName: "",
+      lastName: "",
+      fullname: "",
     };
+  },
+  watch: {
+    // name(value) {
+    //   if (value === "") {
+    //     this.fullname = "";
+    //   } else {
+    //     this.fullname = value + " " + this.lastName;
+    //   }
+    // },
+    // lastName(value) {
+    //   if (value === "") {
+    //     this.fullname = "";
+    //   } else {
+    //     this.fullname = this.name + " " + value;
+    //   }
+    // },
   },
   computed: {
     //Computed properties are name like data properties
-    fullname () {
-      return this.name !== ''  ? this.name + ' ' + 'R' : '';
-    }
+    // fullname () {
+    //   return this.name !== ''  ? this.name + ' ' + 'R' : '';
+    // }
   },
 
-  methods : {
+  methods: {
     confirmInput() {
       this.confirmedName = this.name;
     },
     submitForm(event) {
       // Prevents the form from being submitted.
       event.preventDefault();
-      alert('Submitted!');
+      alert("Submitted!");
     },
-    outputFullname () {
-      return this.name !== ''  ? this.name + ' ' + 'R' : '';
+    outputFullname() {
+      return this.name !== "" ? this.name + " " + "R" : "";
     },
     // Whenever a function is listening to an event it does not need to return a value
     setName(event) {
       this.name = event.target.value;
     },
     add(num) {
-      this.counter+=num;
+      this.counter += num;
     },
     reduce(num) {
-      this.counter-=num;
+      this.counter -= num;
     },
 
     resetInput() {
-      this.name =  '';
-    }
-  }
+      this.name = "";
+    },
+  },
 });
 
-app.mount('#events');
+app.mount("#events");
